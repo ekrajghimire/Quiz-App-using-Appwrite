@@ -23,6 +23,41 @@ class _QuizAppState extends State<QuizApp> {
   int score = 0;
   int currentQuestion = 0;
 
+  // reset
+  void reset() {
+    setState(() {
+      score = 0;
+      currentQuestion = 0;
+    });
+  }
+
+  // check answer
+  void checkAnswer(int userChoice) {
+    setState(() {
+      if (quizes[currentQuestion].correctoption == userChoice) {
+        score++;
+      }
+      if (currentQuestion == quizes.length - 1) {
+        showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+                  title: const Text('Result'),
+                  content: Text('Your score is $score out of ${quizes.length}'),
+                  actions: [
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                          reset();
+                        },
+                        child: const Text('Play Again'))
+                  ],
+                ));
+        return;
+      }
+      currentQuestion++;
+    });
+  }
+
   // Get Data from API()
   Future getData() async {
     String url =
@@ -58,7 +93,9 @@ class _QuizAppState extends State<QuizApp> {
         backgroundColor: Colors.blueAccent.shade400,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          reset();
+        },
         backgroundColor: Colors.blueAccent.shade400,
         child: const Icon(Icons.refresh),
       ),
@@ -89,7 +126,9 @@ class _QuizAppState extends State<QuizApp> {
                     color: Colors.blue,
                     minWidth: double.infinity,
                     height: 50,
-                    onPressed: () {},
+                    onPressed: () {
+                      checkAnswer(1);
+                    },
                     child: Text(
                       'A. ${quizes[currentQuestion].option1}',
                       style: const TextStyle(fontSize: 18),
@@ -102,7 +141,9 @@ class _QuizAppState extends State<QuizApp> {
                     color: Colors.blue,
                     minWidth: double.infinity,
                     height: 50,
-                    onPressed: () {},
+                    onPressed: () {
+                      checkAnswer(2);
+                    },
                     child: Text(
                       'B. ${quizes[currentQuestion].option2}',
                       style: const TextStyle(fontSize: 18),
@@ -115,7 +156,9 @@ class _QuizAppState extends State<QuizApp> {
                     color: Colors.blue,
                     minWidth: double.infinity,
                     height: 50,
-                    onPressed: () {},
+                    onPressed: () {
+                      checkAnswer(3);
+                    },
                     child: Text(
                       'C. ${quizes[currentQuestion].option3}',
                       style: const TextStyle(fontSize: 18),
@@ -128,7 +171,9 @@ class _QuizAppState extends State<QuizApp> {
                     color: Colors.blue,
                     minWidth: double.infinity,
                     height: 50,
-                    onPressed: () {},
+                    onPressed: () {
+                      checkAnswer(4);
+                    },
                     child: Text(
                       'D. ${quizes[currentQuestion].option4}',
                       style: const TextStyle(fontSize: 18),
