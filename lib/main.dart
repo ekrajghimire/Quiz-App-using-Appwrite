@@ -24,9 +24,9 @@ class _QuizAppState extends State<QuizApp> {
           // For Question
           Container(
             height: 100,
-            child: Text(
+            child: const Text(
               'Qn.',
-              style: const TextStyle(fontSize: 24.0),
+              style: TextStyle(fontSize: 24.0),
             ),
           )
         ],
