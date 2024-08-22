@@ -104,6 +104,9 @@ class _QuizAppState extends State<QuizApp> {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
+                  Text('${currentQuestion + 1} out of ${quizes.length}'),
+                  const SizedBox(height: 10),
+
                   // For Question
                   Container(
                     decoration: BoxDecoration(
