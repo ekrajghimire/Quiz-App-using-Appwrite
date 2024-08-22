@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/model.dart';
+import 'package:http/http.dart' as http;
 
 void main() => runApp(MaterialApp(
       theme: ThemeData.dark(),
@@ -14,6 +16,29 @@ class QuizApp extends StatefulWidget {
 }
 
 class _QuizAppState extends State<QuizApp> {
+  // For Quiz List
+  List<Quiz> quizes = [];
+  int score = 0;
+  int currentQuestion = 0;
+
+  // Get Data from API()
+  Future getData() async {
+    String url =
+        'https://cloud.appwrite.io/v1/databases/66c2e402003d6341b865/collections/66c2e41200346c92a802/documents';
+    var response = await http.get(Uri.parse(url));
+
+    if (response.statusCode == 200) {
+      print(response.body);
+    }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
