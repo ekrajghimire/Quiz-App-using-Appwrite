@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MaterialApp(
+void main() => runApp(MaterialApp(
+      theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      home: QuizApp(),
+      home: const QuizApp(),
     ));
 
 class QuizApp extends StatefulWidget {
@@ -18,6 +19,7 @@ class _QuizAppState extends State<QuizApp> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Quiz App'),
+        backgroundColor: Colors.blueAccent.shade400,
       ),
       body: Column(
         children: [
