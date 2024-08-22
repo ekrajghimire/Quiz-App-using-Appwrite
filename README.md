@@ -1,6 +1,6 @@
-# quizapp
+# Quiz App using Appwrite
 
-A new Flutter project.
+A new Flutter project using Appwrite.
 
 ## Getting Started
 
