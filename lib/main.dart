@@ -21,6 +21,11 @@ class _QuizAppState extends State<QuizApp> {
         title: const Text('Quiz App'),
         backgroundColor: Colors.blueAccent.shade400,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.blueAccent.shade400,
+        child: const Icon(Icons.refresh),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -39,44 +44,52 @@ class _QuizAppState extends State<QuizApp> {
                 ),
               ),
             ),
+            const SizedBox(height: 10),
 
             //opt1
             MaterialButton(
               color: Colors.blue,
               minWidth: double.infinity,
+              height: 50,
               onPressed: () {},
               child: const Text(
                 'Opt 1',
                 style: TextStyle(fontSize: 18),
               ),
             ),
+            const SizedBox(height: 10),
 
             //opt2
             MaterialButton(
               color: Colors.blue,
               minWidth: double.infinity,
+              height: 50,
               onPressed: () {},
               child: const Text(
                 'Opt 2',
                 style: TextStyle(fontSize: 18),
               ),
             ),
+            const SizedBox(height: 10),
 
             //opt3
             MaterialButton(
               color: Colors.blue,
               minWidth: double.infinity,
+              height: 50,
               onPressed: () {},
               child: const Text(
                 'Opt 3',
                 style: TextStyle(fontSize: 18),
               ),
             ),
+            const SizedBox(height: 10),
 
             //opt4
             MaterialButton(
               color: Colors.blue,
               minWidth: double.infinity,
+              height: 50,
               onPressed: () {},
               child: const Text(
                 'Opt 4',
