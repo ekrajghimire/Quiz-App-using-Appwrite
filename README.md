@@ -2,6 +2,9 @@
 
 A new Flutter project using Appwrite.
 
+<a href="https://quiz-app-using-appwrite.vercel.app"> Click here to Try </a>
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
